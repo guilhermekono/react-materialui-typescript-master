@@ -32,7 +32,6 @@ export const MenuLateral: React.FC<Props> = ({children}) => {
                             </ListItemIcon>
                             <ListItemText primary="Página inicial"/>
 
-
                         </ListItemButton>
                     </List>
                 </Box>
