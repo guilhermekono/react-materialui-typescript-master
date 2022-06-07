@@ -1,8 +1,6 @@
 import {Box, Button, Divider, Icon, Paper, useTheme} from '@mui/material';
 
-interface IFerramentasDeDetalheProps{
-    textoBotaoNovo
-}
+
 
 export const FerramentasDeDetalhe: React.FC = () => {
     const theme = useTheme();
