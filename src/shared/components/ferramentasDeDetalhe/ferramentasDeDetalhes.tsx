@@ -1,4 +1,4 @@
-import {Box, Button, Divider, Icon, Paper, useTheme} from '@mui/material';
+import {Box, Button, Divider, Icon, Paper, Skeleton, Theme, Typography, useMediaQuery, useTheme} from '@mui/material';
 
 interface IFerramentasDeDetalheProps{
     textoBotaoNovo?: string;
@@ -8,6 +8,12 @@ interface IFerramentasDeDetalheProps{
     mostrarBotaoApagar?: boolean;
     mostrarBotaoSalvar?: boolean;
     mostrarBotaoSalvarEFechar?: boolean;
+
+    mostrarBotaoNovoCarregando?: boolean;
+    mostrarBotaoVoltarCarregando?: boolean;
+    mostrarBotaoApagarCarregando?: boolean;
+    mostrarBotaoSalvarCarregando?: boolean;
+    mostrarBotaoSalvarEFecharCarregando?: boolean;
 
     aoClicarEmNovo?: () => void;
     aoClicarEmVoltar?: () => void;
@@ -26,6 +32,12 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
     mostrarBotaoSalvar = true,
     mostrarBotaoSalvarEFechar = false,
 
+    mostrarBotaoNovoCarregando = false,
+    mostrarBotaoVoltarCarregando = false,
+    mostrarBotaoApagarCarregando = false,
+    mostrarBotaoSalvarCarregando = false,
+    mostrarBotaoSalvarEFecharCarregando = false,
+
     aoClicarEmNovo,
     aoClicarEmVoltar,
     aoClicarEmApagar,
@@ -34,6 +46,11 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
 
 
     }) => {
+
+    const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+    const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+    
+
     const theme = useTheme();
 
     return (
@@ -46,53 +63,109 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
             gap={1}
             component={Paper}>
             
-            {mostrarBotaoSalvar && (
+            
+            
+            {(mostrarBotaoSalvar && !mostrarBotaoSalvarCarregando) && (
             <Button
                 onClick={aoClicarEmSalvar}
                 color="primary"
                 disableElevation
                 variant="contained"
                 startIcon={<Icon>save</Icon>}
-            > Salvar </Button>
+            > 
+                <Typography variant='button' whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden"> 
+                    Salvar
+                </Typography>
+            
+            </Button>
             )}
-            {mostrarBotaoNovo && (
+
+            {mostrarBotaoSalvarCarregando &&(
+                <Skeleton width={64} height={40} />
+            )}
+
+            {(mostrarBotaoNovo && !mostrarBotaoNovoCarregando && !smDown) && (
             <Button
                 onClick={aoClicarEmNovo}
                 color="primary"
                 disableElevation
                 variant="outlined"
                 startIcon={<Icon>add</Icon>}
-            > {textoBotaoNovo} </Button>
+            > 
+                <Typography variant='button' whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
+                    {textoBotaoNovo}
+                </Typography>
+            </Button>
             )}
-            {mostrarBotaoSalvarEFechar &&(
+
+            {(mostrarBotaoNovoCarregando && !smDown) &&(
+                <Skeleton width={64} height={40} />
+            )}
+
+            {(mostrarBotaoSalvarEFechar && !mostrarBotaoSalvarEFecharCarregando && !smDown && !mdDown) &&(
             <Button
                 onClick={aoClicarEmSalvarEFechar}
                 color="primary"
                 disableElevation
                 variant="outlined"
                 startIcon={<Icon>save</Icon>}
-            > Salvar e voltar </Button>
+            > 
+                <Typography variant='button' whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
+                    Salvar e voltar
+                </Typography>
+            </Button>
             )}
-            {mostrarBotaoApagar && (
+
+            {(mostrarBotaoSalvarEFecharCarregando && !smDown && !mdDown) && (
+                <Skeleton width={64} height={40} />
+            )}
+
+            {(mostrarBotaoApagar && !mostrarBotaoApagarCarregando) && (
             <Button
                 onClick={aoClicarEmApagar}  
                 color="primary"
                 disableElevation
                 variant="outlined"
                 startIcon={<Icon>delete</Icon>}
-            > Apagar </Button>
+            > 
+                <Typography variant='button' whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
+                    Apagar
+                </Typography> 
+            </Button>
             )}
 
-            <Divider variant='middle' orientation='horizontal' />
-            {mostrarBotaoVoltar && (
+            {
+                (
+                    mostrarBotaoVoltar &&
+                    (mostrarBotaoNovo || mostrarBotaoApagar || mostrarBotaoSalvar || mostrarBotaoSalvarEFechar)
+                ) && (
+                    <Divider variant='middle' orientation='horizontal' />
+                )
+            }
+            
+            {mostrarBotaoApagarCarregando &&(
+                <Skeleton width={64} height={40} />
+            )}
+            
+            {(mostrarBotaoVoltar && !mostrarBotaoVoltarCarregando) && (
             <Button
                 onClick={aoClicarEmVoltar}
                 color="primary"
                 disableElevation
                 variant="outlined"
                 startIcon={<Icon>arrow_back</Icon>}
-            > Voltar </Button>
+            > 
+                <Typography variant='button' whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
+                    Voltar 
+                </Typography>
+            
+            </Button>
             )}
+
+            {mostrarBotaoVoltarCarregando &&(
+                <Skeleton width={64} height={40} />
+            )}
+
         </Box>
     );
 
