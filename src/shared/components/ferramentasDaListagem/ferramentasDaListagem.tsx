@@ -6,13 +6,13 @@ import { Environment } from "../../enviroment"; //Separar imports externos dos i
 interface IFerramentasDaListagemProps {
     textoDaBusca?: string;
     mostrarInputBusca?: boolean;
-    aoMudarTextDeBusca?: (novoTexto: string) => void;
+    aoMudarTextoDeBusca?: (novoTexto: string) => void;
     textoBotaoNovo?: string;
     mostrarBotaoNovo?: boolean;
     aoClicarEmNovo?: () => void;
 }
 
-export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({textoDaBusca = '', mostrarInputBusca=false, aoMudarTextDeBusca, aoClicarEmNovo, textoBotaoNovo = "Novo", mostrarBotaoNovo="true",}) => {
+export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({textoDaBusca = '', mostrarInputBusca=false, aoMudarTextoDeBusca, aoClicarEmNovo, textoBotaoNovo = "Novo", mostrarBotaoNovo="true",}) => {
 
     const theme = useTheme();
 
@@ -31,7 +31,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({te
                 <TextField 
                 size="small"
                 value={textoDaBusca}
-                onChange={(e) => aoMudarTextDeBusca?.(e.target.value)}
+                onChange={(e) => aoMudarTextoDeBusca?.(e.target.value)}
                 placeholder={Environment.INPUT_DE_BUSCA}
             />
             )}
