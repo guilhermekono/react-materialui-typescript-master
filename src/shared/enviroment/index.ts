@@ -6,7 +6,7 @@ export const Environment = {
      */
 
 
-    LIMITE_DE_LINHAS: 10,
+    LIMITE_DE_LINHAS: 7,
     /**
      * Placeholder exibido nos inputs
      */
