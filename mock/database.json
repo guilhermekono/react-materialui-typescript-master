@@ -1,94 +1,88 @@
 {
-    "pessoas": [
-        {
-            "id":1,
-            "email": "juca@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvad pinto"
-        },
-        {
-            "id":2,
-            "email": "juca2@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvas pinto"
-        },
-        {
-            "id":3,
-            "email": "juca3@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silva spinto"
-        },
-        {
-            "id":4,
-            "email": "juca4@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvaa pinto"
-        },
-        {
-            "id":5,
-            "email": "juca4@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvaa pinto"
-        },
-        {
-            "id":6,
-            "email": "juca@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvad pinto"
-        },
-        {
-            "id":7,
-            "email": "juca2@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvas pinto"
-        },
-        {
-            "id":8,
-            "email": "juca3@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silva spinto"
-        },
-        {
-            "id":9,
-            "email": "juca4@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvaa pinto"
-        },
-        {
-            "id":10,
-            "email": "juca4@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvaa pinto"
-        },
-        {
-            "id":11,
-            "email": "juca@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvad pinto"
-        },
-        {
-            "id":12,
-            "email": "juca2@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvas pinto"
-        },
-        {
-            "id":13,
-            "email": "juca3@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silva spinto"
-        },
-        {
-            "id":14,
-            "email": "juca4@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvaa pinto"
-        },
-        {
-            "id":15,
-            "email": "juca4@gmail.com",
-            "cidadeId": 1,
-            "nomeCompleto": "silvaa pinto"
-        }
-    ]
+  "pessoas": [
+    {
+      "id": 2,
+      "email": "juca2@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvas pinto"
+    },
+    {
+      "id": 3,
+      "email": "juca3@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silva spinto"
+    },
+    {
+      "id": 4,
+      "email": "juca4@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvaa pinto"
+    },
+    {
+      "id": 5,
+      "email": "juca4@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvaa pinto"
+    },
+    {
+      "id": 6,
+      "email": "juca@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvad pinto"
+    },
+    {
+      "id": 7,
+      "email": "juca2@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvas pinto"
+    },
+    {
+      "id": 8,
+      "email": "juca3@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silva spinto"
+    },
+    {
+      "id": 9,
+      "email": "juca4@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvaa pinto"
+    },
+    {
+      "id": 10,
+      "email": "juca4@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvaa pinto"
+    },
+    {
+      "id": 11,
+      "email": "juca@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvad pinto"
+    },
+    {
+      "id": 12,
+      "email": "juca2@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvas pinto"
+    },
+    {
+      "id": 13,
+      "email": "juca3@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silva spinto"
+    },
+    {
+      "id": 14,
+      "email": "juca4@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvaa pinto"
+    },
+    {
+      "id": 15,
+      "email": "juca4@gmail.com",
+      "cidadeId": 1,
+      "nomeCompleto": "silvaa pinto"
+    }
+  ]
 }
