@@ -45,7 +45,6 @@ export const ListagemDePessoas: React.FC = () => {
             }
             console.log(result);
 
-
             setTotalCount(result.totalCount);
             setRows(result.data);
         })
