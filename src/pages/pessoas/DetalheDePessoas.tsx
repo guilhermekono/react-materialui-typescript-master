@@ -1,10 +1,12 @@
-import { LinearProgress } from "@mui/material";
+import { LinearProgress, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Form } from '@unform/web';
 
 import { FerramentasDeDetalhe } from "../../shared/components";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import { PessoasService } from "../../shared/services/api/pessoas/PessoasService";
+import { VTextField } from "../../shared/form";
 
 
 
@@ -74,12 +76,20 @@ export const DetalheDePessoas: React.FC = () => {
 
 
         >
+            <Form onSubmit={(dados) => console.log(dados)}>
+                
+                <VTextField 
+                    name='nomeCompleto'
 
-            {isLoading && (
-                <LinearProgress variant='indeterminate'/>
-            )}
+                
+                />
+                               
+                <button type='submit'>Submit</button>
 
-        <p>DetalheDePessoas {id}</p>
+            </Form>
+            
+
+        
         </LayoutBaseDePagina>
     );
 
