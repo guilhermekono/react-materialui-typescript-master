@@ -57,7 +57,7 @@ export const ListagemDePessoas: React.FC = () => {
 
     const handleDelete = (id: number) => {
         
-        if (confirm('Tem certeza que quer deletar o bagulho? Pode ser importante, ou nao, eu sou um aviso digital, não um policial, faça o que quiser')){
+        if (window.confirm('Tem certeza que quer deletar o bagulho? Pode ser importante, ou nao, eu sou um aviso digital, não um policial, faça o que quiser')){
             PessoasService.deleteById(id)
             .then(result => {
                 if (result instanceof Error){
@@ -83,6 +83,7 @@ export const ListagemDePessoas: React.FC = () => {
                 mostrarInputBusca
                 textoBotaoNovo="Nova"
                 textoDaBusca={busca}
+                aoClicarEmNovo={() => navigate('/pessoas/detalhe/nova')}
                 aoMudarTextoDeBusca={texto => setSearchParamns({ busca: texto, pagina: '1'}, {replace:true})} 
             />}        
         >
