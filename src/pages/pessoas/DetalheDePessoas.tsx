@@ -12,7 +12,7 @@ import { VTextField } from "../../shared/form";
 
 interface IFormData {
     email: string;
-    cidadeId: string;
+    cidadeId: number;
     nomeCompleto: string;
 
 }
@@ -40,7 +40,7 @@ export const DetalheDePessoas: React.FC = () => {
                         navigate('/pessoas');
                     }else{
                         setNome(result.nomeCompleto);
-                        console.log(result);
+                        formRef.current?.setData(result);
                     }
                 });
         }
@@ -48,7 +48,30 @@ export const DetalheDePessoas: React.FC = () => {
     }, [id]);
 
     const handleSave = (dados: IFormData) => {
-        console.log(dados);
+        
+        setIsLoading(true);
+
+        if(id === 'nova'){
+            PessoasService.create(dados).then((result) => {
+                setIsLoading(false);
+
+                if(result instanceof Error){
+                    alert(result.message);
+                }else{
+                    navigate(`/pessoas/detalhe/${result}`);
+                }
+            });
+
+        }else{
+            PessoasService.updateById(Number(id), {id: Number(id), ...dados}).then((result) => {
+                setIsLoading(false);
+
+                if(result instanceof Error){
+                    alert(result.message);
+                }
+            });
+        }
+
     }
 
     const handleDelete = (id: number) => {
@@ -86,11 +109,9 @@ export const DetalheDePessoas: React.FC = () => {
         >
             <Form ref={formRef} onSubmit={handleSave}>
                 
-                <VTextField name='nomeCompleto'/>
-                <VTextField name='email'/>
-                <VTextField name='cidadeId'/>
-
-                <button type='submit'>Submit</button>
+                <VTextField placeholder='Nome Completo' name='nomeCompleto'/>
+                <VTextField placeholder='Email' name='email'/>
+                <VTextField placeholder='Id da cidade' name='cidadeId'/>
 
             </Form>
             

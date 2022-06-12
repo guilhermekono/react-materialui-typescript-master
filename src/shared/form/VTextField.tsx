@@ -17,9 +17,9 @@ export const VTextField: React.FC<TVTextFieldProps> = ({name, ...rest}) => {
         registerField({
             name: fieldName, 
             getValue: () => value, 
-            setValue: (_, newValue) => setValue,
+            setValue: (_, newValue) => setValue(newValue),
         });
-    }, [registerField, fieldName]);
+    }, [registerField, fieldName, value]);
 
 
     return(
