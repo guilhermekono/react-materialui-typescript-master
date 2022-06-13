@@ -1,4 +1,4 @@
-import { LinearProgress, TextField } from "@mui/material";
+import { Box, Grid, LinearProgress, Paper, TextField, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Form } from '@unform/web';
@@ -108,11 +108,63 @@ export const DetalheDePessoas: React.FC = () => {
 
         >
             <Form ref={formRef} onSubmit={handleSave}>
-                
-                <VTextField placeholder='Nome Completo' name='nomeCompleto'/>
-                <VTextField placeholder='Email' name='email'/>
-                <VTextField placeholder='Id da cidade' name='cidadeId'/>
+                <Box margin={1} display="flex" flexDirection="column" component={Paper} variant="outlined">
 
+                    <Grid container direction="column" padding={2} spacing={2} >
+
+
+                        {isLoading &&(
+                        <Grid item>
+                            <LinearProgress variant='indeterminate'/>
+                        </Grid>)}
+
+                        <Grid item>
+                            <Typography variant='h6'>Geral</Typography>
+                        </Grid>
+
+                        <Grid container item direction="row" spacing={2}>
+                            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+
+                                <VTextField 
+                                    label='Nome Completo' 
+                                    name='nomeCompleto' 
+                                    fullWidth
+                                    disabled={isLoading}
+                                    onChange={e => setNome(e.target.value)}
+                                />
+                           
+                            </Grid>
+                        </Grid>
+                        <Grid container item direction="row" spacing={2}>
+                            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+
+                                <VTextField 
+                                    label='Email' 
+                                    name='email' 
+                                    fullWidth
+                                    disabled={isLoading}
+                                />
+                            
+                            </Grid>
+                        </Grid>
+                        <Grid container item direction="row" spacing={2}>
+                            <Grid item xs={12} sm={12} md={6} lg={4} xl={2} >
+
+                                <VTextField 
+                                    label='Id da cidade' 
+                                    name='cidadeId' 
+                                    fullWidth
+                                    disabled={isLoading}
+                                />
+                            
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    
+                    
+                    
+                </Box>
             </Form>
             
 
