@@ -2,15 +2,15 @@
   "pessoas": [
     {
       "id": 2,
+      "nomeCompleto": "silvas pinta",
       "email": "juca2@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "silvas pinto"
+      "cidadeId": 1
     },
     {
       "id": 4,
+      "nomeCompleto": "silvaa pintoa",
       "email": "juca4@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "silvaa pinto"
+      "cidadeId": 1
     },
     {
       "id": 5,
