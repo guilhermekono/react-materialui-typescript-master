@@ -90,5 +90,15 @@
       "cidadeId": "666",
       "id": 19
     }
+  ],
+  "cidades": [
+    {
+      "nome": "Chapecó",
+      "id": 1
+    },
+    {
+      "nome": "Chapecó 2",
+      "id": 2
+    }
   ]
 }
